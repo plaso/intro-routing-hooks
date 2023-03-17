@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Xiaomi Redmi Note 11",
+      "price": 199,
+      "manufacturerId": 1,
+      "img": "https://thumb.pccomponentes.com/w-300-300/articles/1002/10026495/1796-xiaomi-redmi-note-11-4-128gb-gris-grafito-libre.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Iphone 14",
+      "price": 949,
+      "manufacturerId": 2,
+      "img": "https://thumb.pccomponentes.com/w-300-300/articles/1067/10673972/1525-apple-iphone-14-128gb-amarillo-libre-b3a8ae4d-6495-4cd3-a526-cab983132c5a.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Samsung Galaxy M53",
+      "price": 339,
+      "manufacturerId": 3,
+      "img": "https://thumb.pccomponentes.com/w-300-300/articles/1028/10281108/1990-samsung-galaxy-m53-5g-8-128gb-marron-libre-a06ce1d6-79c2-49c5-b917-85cdf44ee11d.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Samsung Galaxy Z Flip4",
+      "price": 1099,
+      "manufacturerId": 3,
+      "img": "https://thumb.pccomponentes.com/w-300-300/articles/1051/10513232/1501-samsung-galaxy-z-flip4-5g-8-128gb-gris-cargador-de-pared-25w.jpg"
+    }
+  ],
+  "manufacturers": [
+    {
+      "id": 1,
+      "name": "Xiaomi"
+    },
+    {
+      "id": 2,
+      "name": "Apple"
+    },
+    {
+      "id": 3,
+      "name": "Samsung"
+    }
+  ]
+}
