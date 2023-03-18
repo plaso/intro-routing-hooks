@@ -27,6 +27,13 @@
       "price": 1099,
       "manufacturerId": 3,
       "img": "https://thumb.pccomponentes.com/w-300-300/articles/1051/10513232/1501-samsung-galaxy-z-flip4-5g-8-128gb-gris-cargador-de-pared-25w.jpg"
+    },
+    {
+      "name": "ALCATEL",
+      "price": 3,
+      "manufacturerId": "1",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Xiaomi_logo_%282021-%29.svg/1024px-Xiaomi_logo_%282021-%29.svg.png",
+      "id": 5
     }
   ],
   "manufacturers": [
