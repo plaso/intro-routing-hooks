@@ -15,7 +15,7 @@ const Products = () => {
       })
   }, [])
 
-  useInterval(fetchProducts, 1000)
+  useInterval(fetchProducts, 15000)
 
   useEffect(() => {
     fetchProducts()

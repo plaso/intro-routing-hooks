@@ -32,15 +32,18 @@
   "manufacturers": [
     {
       "id": 1,
-      "name": "Xiaomi"
+      "name": "Xiaomi",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Xiaomi_logo_%282021-%29.svg/1024px-Xiaomi_logo_%282021-%29.svg.png"
     },
     {
       "id": 2,
-      "name": "Apple"
+      "name": "Apple",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ0oB4mcJKRwvUTySReKWZX5l2kqAXzTxMmRMdBFxucWGX_449WCjGYLAa5SgvzGnesg4&usqp=CAU"
     },
     {
       "id": 3,
-      "name": "Samsung"
+      "name": "Samsung",
+      "img": "https://e7.pngegg.com/pngimages/258/513/png-clipart-logo-samsung-galaxy-j5-2016-samsung-group-samsung-electronics-oxford-development-studies-blue-electronics-thumbnail.png"
     }
   ]
 }

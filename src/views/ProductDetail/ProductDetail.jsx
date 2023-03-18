@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import ManufacturerAvatar from "../../components/misc/ManufacturerAvatar/ManufacturerAvatar";
 import { getProductDetail } from '../../services/ProductsService'
 
 const ProductDetail = () => {
@@ -24,16 +25,23 @@ const ProductDetail = () => {
 
   return (
     <div>
-      <h1>Product Detail</h1>
 
-      {loading
-        ? <p>Loading...</p>
-        : <>
-            <h2>{product?.name}</h2>
-
-            <img src={product?.img} />
-        </>
-      }
+      <div className="border p-4 rounded">
+        {loading
+          ? <p>Loading...</p>
+          : <div className="row">
+              <div className="col-4">
+                <img src={product?.img} className="w-100" />
+              </div>
+              <div className="col-8">
+                <h1>{product?.name}</h1>
+                <p className="text-success fw-bold fs-5">{product.price}€</p>
+                <ManufacturerAvatar {...product?.manufacturer} />
+              </div>
+          </div>
+        }
+      </div>
+      
 
       <Link to={`/products/${Number(productId) + 1}`}>Siguiente</Link>
     </div>
