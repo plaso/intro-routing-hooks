@@ -1,9 +1,17 @@
 import { http } from './BaseService';
 
-export const getProducts = () => {
+const SORT_BY_NAME_PARAMS = {
+  _sort: 'name',
+  _order: 'asc'
+}
+
+export const getProducts = (search, sortByName) => {
   return http.get('/products', {
     params: {
-      _expand: 'manufacturer'
+      _expand: 'manufacturer',
+      q: search,
+      _sort: sortByName ? 'name' : undefined,
+      _order: sortByName ? 'asc' : undefined
     }
   })
 }
