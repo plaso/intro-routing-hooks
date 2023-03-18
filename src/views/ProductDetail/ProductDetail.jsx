@@ -26,7 +26,7 @@ const ProductDetail = () => {
   return (
     <div>
 
-      <div className="border p-4 rounded">
+      <div className="border p-4 rounded bg-white">
         {loading
           ? <p>Loading...</p>
           : <div className="row">

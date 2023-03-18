@@ -22,8 +22,17 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
                 to="products"
+                end
               >
                 Products
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
+                to="products/new"
+              >
+                Create a new product
               </NavLink>
             </li>
           </ul>

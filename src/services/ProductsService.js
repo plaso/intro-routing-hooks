@@ -15,3 +15,7 @@ export const getProductDetail = (id) => {
     }
   })
 }
+
+export const createProduct = (productBody) => {
+  return http.post('/products', productBody)
+}
