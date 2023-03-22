@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/misc/Navbar/Navbar";
+import ThemeContext from "./contexts/ThemeContext";
 import ErrorPage from "./views/ErrorPage/ErrorPage";
 import Home from "./views/Home/Home";
 import ManufacturerDetail from "./views/ManufacturerDetail/ManufacturerDetail";
@@ -8,8 +10,10 @@ import ProductDetail from "./views/ProductDetail/ProductDetail";
 import Products from "./views/Products/Products";
 
 function App() {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div className="App text-bg-light min-vh-100">
+    <div data-bs-theme={theme} className="App text-body bg-body min-vh-100">
       <Navbar />
       <div className="container my-4">
         <Routes>

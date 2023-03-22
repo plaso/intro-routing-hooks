@@ -108,7 +108,7 @@ const NewProduct = () => {
   })
 
   return (
-    <div className="border p-4 rounded bg-white">
+    <div className="border p-4 rounded">
       <h1>New Product</h1>
 
       <form onSubmit={onSubmit}>
