@@ -39,7 +39,7 @@ const Navbar = () => {
               </NavLink>
             </li>
           </ul>
-          <button class="btn btn-outline-light" onClick={toggleTheme} >Toggle theme</button>
+          <button className="btn btn-outline-light" onClick={toggleTheme} >Toggle theme</button>
         </div>
       </div>
     </nav>
