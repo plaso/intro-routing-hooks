@@ -1,4 +1,5 @@
-import { createContext, useState } from "react";
+import { createContext, useCallback, useMemo, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const THEME_LOCAL_STORAGE_KEY = 'theme'
 const supportedThemes = ['light', 'dark']
@@ -15,16 +16,26 @@ const getInitialTheme = () => {
 }
 
 export const ThemeProvider = ({ children }) => {
+  const location = useLocation()
+  console.log('render', location)
   const [theme, setTheme] = useState(getInitialTheme())
 
-  const toggleTheme = () => {
+  const toggleTheme = useCallback(() => {
     const newThemeValue = theme === 'light' ? 'dark' : 'light'
     setTheme(newThemeValue);
     localStorage.setItem(THEME_LOCAL_STORAGE_KEY, newThemeValue)
-  }
+  }, [theme])
+  
+  const value = useMemo(
+    () => {
+      return {
+        theme, toggleTheme
+      }
+    }, [theme, toggleTheme]
+  )
 
   return (
-    <ThemeContext.Provider value={{ theme: theme, toggleTheme: toggleTheme }}>
+    <ThemeContext.Provider value={value}>
       {children}
     </ThemeContext.Provider>
   )
