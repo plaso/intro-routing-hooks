@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useCallback, useMemo, useState } from "react";
 
 const LANGUAGE_KEY = 'language';
 const DEFAULT_LANGUAGE = 'es';
@@ -19,17 +19,19 @@ const userInitialLanguage = getValidLanguage(
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(userInitialLanguage);
 
-  const selectLanguage = (languageToSelect) => {
+  const selectLanguage = useCallback((languageToSelect) => {
     const newLanguage = getValidLanguage(languageToSelect)
     setLanguage(newLanguage)
     localStorage.setItem(LANGUAGE_KEY, newLanguage)
-  }
+  }, [])
 
-  const value = {
-    language: getValidLanguage(language),
-    supportedLanguages,
-    setLanguage: selectLanguage
-  }
+  const value = useMemo(() => {
+    return {
+      language: getValidLanguage(language),
+      supportedLanguages,
+      setLanguage: selectLanguage
+    }
+  }, [language, selectLanguage])
 
   return (
     <LanguageContext.Provider value={value}>
