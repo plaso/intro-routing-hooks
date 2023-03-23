@@ -6,7 +6,7 @@ const ProductItem = ({ id, name, img, manufacturer }) => {
     <div className="card h-100 p-2">
       <img src={img} className="card-img-top" alt={name} />
       <div className="card-body">
-        <h5 className="card-title text-dark">{name}</h5>
+        <h5 className="card-title text-body">{name}</h5>
         <ManufacturerAvatar {...manufacturer} />
         <Link className="btn btn-primary mt-2" to={`/products/${id}`}>Ver mas detalles</Link>
       </div>

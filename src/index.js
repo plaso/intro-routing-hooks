@@ -5,14 +5,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from './contexts/ThemeContext';
+import { LanguageProvider } from './contexts/LanguageContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ThemeProvider>
-      <BrowserRouter>
-          <App />
-      </BrowserRouter>
+      <LanguageProvider>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+      </LanguageProvider>
     </ThemeProvider>
   </React.StrictMode>
 );

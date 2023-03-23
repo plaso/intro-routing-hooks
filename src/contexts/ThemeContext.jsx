@@ -1,5 +1,4 @@
 import { createContext, useCallback, useMemo, useState } from "react";
-import { useLocation } from "react-router-dom";
 
 const THEME_LOCAL_STORAGE_KEY = 'theme'
 const supportedThemes = ['light', 'dark']
@@ -16,8 +15,6 @@ const getInitialTheme = () => {
 }
 
 export const ThemeProvider = ({ children }) => {
-  const location = useLocation()
-  console.log('render', location)
   const [theme, setTheme] = useState(getInitialTheme())
 
   const toggleTheme = useCallback(() => {

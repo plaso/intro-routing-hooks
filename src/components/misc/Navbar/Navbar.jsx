@@ -1,13 +1,16 @@
 import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import LanguageContext from '../../../contexts/LanguageContext';
 import ThemeContext from '../../../contexts/ThemeContext';
 
 const Navbar = () => {
   const { toggleTheme } = useContext(ThemeContext)
+  const { language, supportedLanguages, setLanguage } = useContext(LanguageContext)
+
   return (
     <nav className="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">IronPhone Store</Link>
+        <Link className="navbar-brand" to="/">IronPhone Store {language}</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -37,6 +40,21 @@ const Navbar = () => {
               >
                 Create a new product
               </NavLink>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Language
+              </a>
+              <ul class="dropdown-menu">
+                {supportedLanguages.map(language => (
+                  <li key={language}>
+                    <button className="dropdown-item" onClick={() => setLanguage(language)}>
+                      {language}
+                    </button>
+                  </li>
+                ))}
+                {/* <li><a class="dropdown-item" href="#">Action</a></li> */}
+              </ul>
             </li>
           </ul>
           <button className="btn btn-outline-light" onClick={toggleTheme} >Toggle theme</button>
