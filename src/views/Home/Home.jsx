@@ -1,6 +1,9 @@
+import useLocale from "../../hooks/useLocale";
+
 const Home = () => {
+  const { t } = useLocale()
   return (
-    <h1>Home</h1>
+    <h1>{t('homeTitle')}</h1>
   )
 }
 

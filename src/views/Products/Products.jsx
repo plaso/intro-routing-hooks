@@ -4,6 +4,7 @@ import useInterval from '../../hooks/useInterval';
 import { getProducts } from '../../services/ProductsService';
 import Input from '../../components/misc/Input/Input';
 import useDebounce from '../../hooks/useDebounce';
+import useLocale from '../../hooks/useLocale';
 
 const Products = () => {
   const [products, setProducts] = useState([])
@@ -11,6 +12,8 @@ const Products = () => {
   const [filter, setFilter] = useState('')
   const [isSortedByName, setIsSortedByName] = useState(false);
   const debouncedSearchTerm = useDebounce(filter, 1000);
+
+  const { t } = useLocale()
 
   const onFilter = (event) => {
     setFilter(event.target.value)
@@ -43,7 +46,7 @@ const Products = () => {
 
   return (
     <div className="Products">
-      <h1>Products</h1>
+      <h1>{t('products')}</h1>
       <div className="my-3">
         <Input onChange={onFilter} value={filter} />
         <button

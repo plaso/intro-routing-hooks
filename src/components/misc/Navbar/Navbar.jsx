@@ -2,15 +2,17 @@ import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import LanguageContext from '../../../contexts/LanguageContext';
 import ThemeContext from '../../../contexts/ThemeContext';
+import useLocale from '../../../hooks/useLocale';
 
 const Navbar = () => {
   const { toggleTheme } = useContext(ThemeContext)
-  const { language, supportedLanguages, setLanguage } = useContext(LanguageContext)
+  const { supportedLanguages, setLanguage } = useContext(LanguageContext)
+  const { t } = useLocale()
 
   return (
     <nav className="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">IronPhone Store {language}</Link>
+        <Link className="navbar-brand" to="/">{t('brandName')}</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
