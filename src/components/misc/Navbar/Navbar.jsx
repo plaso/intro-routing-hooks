@@ -43,11 +43,11 @@ const Navbar = () => {
                 Create a new product
               </NavLink>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <li className="nav-item dropdown">
+              <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Language
               </a>
-              <ul class="dropdown-menu">
+              <ul className="dropdown-menu">
                 {supportedLanguages.map(language => (
                   <li key={language}>
                     <button className="dropdown-item" onClick={() => setLanguage(language)}>
@@ -55,7 +55,7 @@ const Navbar = () => {
                     </button>
                   </li>
                 ))}
-                {/* <li><a class="dropdown-item" href="#">Action</a></li> */}
+                {/* <li><a className="dropdown-item" href="#">Action</a></li> */}
               </ul>
             </li>
           </ul>
